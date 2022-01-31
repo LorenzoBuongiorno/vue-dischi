@@ -1,5 +1,8 @@
 <template>
     <main>
+        <div class="loader" v-if="dischi.length <= 9">
+            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
         <div class="card-box">
             <card-disk v-for="(disco, i) in dischi" :key="i" :disco="disco" />
         </div> 
@@ -23,6 +26,14 @@ export default {
 main{
     background-color: #1e2d3b;
     height: 92vh;
+    position: relative;
+
+    .loader{
+        position: absolute;
+        left: 50%;
+        bottom: 50%;
+
+    }
     .card-box{
         width:1500px;
         margin: 0 auto;
@@ -32,5 +43,5 @@ main{
         padding: 50px;
     }
 }
-
+@import '@/style/loader.scss';
 </style>
