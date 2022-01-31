@@ -1,11 +1,17 @@
 <template>
-    <div class="song">
-        <div class="picture">
-            <img :src="disco.poster" alt="">
+    <div class="card">
+        <div class="song">
+            <div class="picture">
+                <img :src="disco.poster" alt="">
+            </div>
+            <div class="title">{{disco.title}}</div>
         </div>
-        <div>{{disco.title}}</div>
-        <div>{{disco.author}}</div>
-        <div>{{disco.year}}</div>
+        <div class="description-box">
+            <div class="description">
+                <div class="author">{{disco.author}}</div>
+                <div class="year">{{disco.year}}</div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -19,18 +25,6 @@ props: {
 </script>
 
 <style lang="scss">
-.song{
-    width: calc(100% / 5);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .picture{
-        height: 160px;
-        img{
-            height: 100%;
-        }
-
-    }
-}
+@import '@/style/card.scss'
 
 </style>

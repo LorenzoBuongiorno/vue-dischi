@@ -21,11 +21,15 @@ export default {
 
 <style lang="scss">
 main{
+    background-color: #1e2d3b;
+    height: 100vh;
     .card-box{
         width:1500px;
         margin: 0 auto;
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
+        padding: 50px;
     }
 }
 
