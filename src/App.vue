@@ -1,17 +1,30 @@
 <template>
   <div id="app">
-
+    <main-container :dischi="dischi" />
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import MainContainer from './components/MainContainer.vue'
+import axios from 'axios'
 
 export default {
   name: 'App',
   components: {
-
+    MainContainer
+  },
+    data (){
+    return {
+      dischi: []
+    }
+  },
+  mounted() {
+    axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((response) => {
+      this.dischi = response.data
+    })
   }
+  
+
 }
 </script>
 
