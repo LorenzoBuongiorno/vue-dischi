@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <header></header>
     <main-container :dischi="dischi" />
   </div>
 </template>

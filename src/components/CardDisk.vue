@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div>
+    <div class="song">
+        <div class="picture">
             <img :src="disco.poster" alt="">
         </div>
         <div>{{disco.title}}</div>
@@ -19,5 +19,18 @@ props: {
 </script>
 
 <style lang="scss">
+.song{
+    width: calc(100% / 5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .picture{
+        height: 160px;
+        img{
+            height: 100%;
+        }
+
+    }
+}
 
 </style>
