@@ -22,7 +22,7 @@ export default {
 <style lang="scss">
 main{
     background-color: #1e2d3b;
-    height: 100vh;
+    height: 92vh;
     .card-box{
         width:1500px;
         margin: 0 auto;

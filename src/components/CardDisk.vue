@@ -25,6 +25,6 @@ props: {
 </script>
 
 <style lang="scss">
-@import '@/style/card.scss'
+@import '@/style/card.scss';
 
 </style>
