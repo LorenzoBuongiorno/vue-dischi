@@ -23,5 +23,12 @@ export default {
 </script>
 
 <style lang="scss">
-
+select{
+    border: 0px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    background-color: #1e2d3b;
+    color: #fff;
+    font-size: 20px;
+}
 </style>

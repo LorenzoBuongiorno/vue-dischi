@@ -2,7 +2,9 @@
   <div id="app">
     <header>
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png" alt="">
-      <select-genre @genre="filterGenre"/>
+      <div class="select-menu">
+        <select-genre @genre="filterGenre"/>
+      </div>
     </header>
     <loader class="loader" v-if="!loaded"/>
     <main-container v-else :dischi="dischiFiltered" />
@@ -64,6 +66,11 @@ export default {
     display: flex;
     img{
       height: 100%;
+    }
+    .select-menu{
+      width: 100%;
+      display: flex;
+      justify-content: center
     }
   }
 }
