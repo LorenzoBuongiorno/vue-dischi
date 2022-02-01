@@ -4,10 +4,11 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png" alt="">
       <div class="select-menu">
         <select-genre @genre="filterGenre"/>
+        <select-artist @artist="filterArtist"/>
       </div>
     </header>
     <loader class="loader" v-if="!loaded"/>
-    <main-container v-else :dischi="dischiFiltered" />
+    <main-container v-else :dischi="artistFiltered" />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import MainContainer from './components/MainContainer.vue'
 import axios from 'axios'
 import SelectGenre from './components/SelectGenre.vue'
 import Loader from './components/Loader.vue'
+import SelectArtist from './components/SelectArtist.vue'
 
 export default {
   name: 'App',
@@ -23,11 +25,13 @@ export default {
     MainContainer,
     Loader,
     SelectGenre,
+    SelectArtist,
   },
     data (){
     return {
       dischi: [],
       dischiFiltered: [],
+      artistFiltered: [],
       loaded: false
     }
   },
@@ -35,6 +39,7 @@ export default {
     axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((element) => {
       this.dischi = element.data.response
       this.dischiFiltered = element.data.response
+      this.artistFiltered = element.data.response
       this.loaded = true;
     })
   },
@@ -49,8 +54,21 @@ export default {
           return disco.genre.includes(keywordSearch);
         })
       }
+      this.artistFiltered = this.dischiFiltered;
+    },
+  filterArtist(keywordSearchArtist) {
+      if (keywordSearchArtist == 'All' || keywordSearchArtist == ''){
+        this.artistFiltered = this.dischiFiltered.filter((disco) => {
+          return disco.author.includes('');
+        })
+      } else {
+        this.artistFiltered = this.dischiFiltered.filter((disco) => {
+          return disco.author.includes(keywordSearchArtist);
+        })
+      }
     }
   }
+
   
 
 }

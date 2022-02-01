@@ -30,5 +30,6 @@ select{
     background-color: #1e2d3b;
     color: #fff;
     font-size: 20px;
+    margin-left: 15px;
 }
 </style>
