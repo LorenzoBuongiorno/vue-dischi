@@ -2,6 +2,7 @@
   <div id="app">
     <header>
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png" alt="">
+      <select-genre />
     </header>
     <main-container :dischi="dischi" />
   </div>
@@ -10,11 +11,13 @@
 <script>
 import MainContainer from './components/MainContainer.vue'
 import axios from 'axios'
+import SelectGenre from './components/SelectGenre.vue'
 
 export default {
   name: 'App',
   components: {
-    MainContainer
+    MainContainer,
+    SelectGenre
   },
     data (){
     return {
@@ -36,6 +39,7 @@ header{
   height: 8vh;
   background-color: #2e3a46;
   padding: 10px;
+  display: flex;
   img{
     height: 100%;
   }

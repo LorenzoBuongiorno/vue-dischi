@@ -8,13 +8,13 @@
 </template>
 
 <script>
-import CardDisk from './CardDisk.vue'
 import Loader from './Loader.vue'
+import CardDisk from './CardDisk.vue'
 
 export default {
     components:{
-        CardDisk,
-        Loader
+        Loader,
+        CardDisk
     },
     props: {
         dischi: Array
