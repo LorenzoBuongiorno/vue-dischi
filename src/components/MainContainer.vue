@@ -1,9 +1,7 @@
 <template>
     <main>
-        <div class="loader" v-if="dischi.length <= 9">
-            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-        </div>
-        <div class="card-box">
+        <loader  class="loader" v-if="dischi.length <= 9"/>
+        <div v-else class="card-box">
             <card-disk v-for="(disco, i) in dischi" :key="i" :disco="disco" />
         </div> 
     </main>
@@ -11,10 +9,12 @@
 
 <script>
 import CardDisk from './CardDisk.vue'
+import Loader from './Loader.vue'
 
 export default {
     components:{
-        CardDisk
+        CardDisk,
+        Loader
     },
     props: {
         dischi: Array
@@ -43,5 +43,4 @@ main{
         padding: 50px;
     }
 }
-@import '@/style/loader.scss';
 </style>
