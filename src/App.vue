@@ -38,10 +38,15 @@ export default {
   },
   methods: {
     filterGenre(keywordSearch) {
-      console.log(keywordSearch);
-      this.dischiFiltered = this.dischi.filter((disco) => {
-        return disco.genre.includes(keywordSearch);
-      })
+      if (keywordSearch == 'All'){
+        this.dischiFiltered = this.dischi.filter((disco) => {
+          return disco.genre.includes('');
+        })
+      } else {
+        this.dischiFiltered = this.dischi.filter((disco) => {
+          return disco.genre.includes(keywordSearch);
+        })
+      }
     }
   }
   
