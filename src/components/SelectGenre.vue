@@ -1,23 +1,23 @@
 <template>
     <div>
-        <select v-model="selected">
+        <select v-model="selected" @change="$emit('genre', selected)">
             <option disabled value="">Genre</option>
             <option>Rock</option>
             <option>Pop</option>
             <option>Jazz</option>
             <option>Metal</option>
         </select>
-        <span>Selected: {{ selected }}</span>
+        <span>{{selected}}</span>
     </div>
 </template>
 
 <script>
 export default {
-  data() {
-      return {
-          selected: ''
-      }
-  }
+    data() {
+        return {
+            selected: ''
+        }
+    }
 }
 
 </script>
