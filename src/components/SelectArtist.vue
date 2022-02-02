@@ -2,16 +2,16 @@
     <div>
         <select v-model="selectedArtist" @change="$emit('artist', selectedArtist)">
             <option disabled value="">Artist</option>
-            <option>All</option>
-            <option>Metallica</option>
-            <option>Deep Purple</option>
-            <option>Eric Clapton</option>
-            <option>Iron Maiden</option>
-            <option>Steve Gadd Band</option>
-            <option>Sting</option>
-            <option>Queen</option>
-            <option>Dave Weckl</option>
-            <option>Michael Jacjson</option>
+            <option value="All">All</option>
+            <option value="Metallica">Metallica</option>
+            <option value="Deep Purple">Deep Purple</option>
+            <option value="Eric Clapton">Eric Clapton</option>
+            <option value="Iron Maiden">Iron Maiden</option>
+            <option value="Steve Gadd Band">Steve Gadd Band</option>
+            <option value="Sting">Sting</option>
+            <option value="Queen">Queen</option>
+            <option value="Dave Weckl">Dave Weckl</option>
+            <option value="Michael Jacjson">Michael Jacjson</option>
         </select>
     </div>
 </template>
